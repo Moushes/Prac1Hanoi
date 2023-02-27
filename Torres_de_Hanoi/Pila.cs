@@ -10,12 +10,15 @@ namespace Torres_de_Hanoi
     {
         public int Size { get; set; }
         public int Top { get; set; }
-        public Disco[] Elementos { get; set; }
+        public List<Disco> Elementos { get; set; }
+
 
         /* TODO: Implementar métodos */
         public Pila()
         {
-
+            Size = 0;
+            Top = 0;
+            Elementos = new List<Disco>();
         }
 
         public void push(Disco d)
