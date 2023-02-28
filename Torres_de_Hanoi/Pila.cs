@@ -14,25 +14,47 @@ namespace Torres_de_Hanoi
 
 
         /* TODO: Implementar métodos */
-        public Pila()
+        public Pila()  // pila vacía
         {
             Size = 0;
             Top = 0;
             Elementos = new List<Disco>();
         }
 
-        public void push(Disco d)
-        {
+        public Pila(int n){  //pila que dependiendo de del numero q pongas va a crear pilas de discos hasta n
+            
+            Size = n;
+            Elementos = new List<Disco>(); 
 
+            for(int i=n; i > 0; i--){
+
+                Disco disco = new Disco(); //crear disco vacío
+                Disco.Valor(n-i);       // Dar valor al disco
+                Elementos.Add(disco);   //Anyadir disco a la pila
+            }
+            Top = Elementos.Last().Valor;
         }
 
-        public Disco pop()
-        {
+        public void push(Disco d){
+            if(d.Valor > Elementos.Last().Valor){
+                Console.Write("No se puede hacer el push");
+            }
+
+            else{
+                Elementos.Add(d);
+                Size = Elementos.Count();
+                Top = Elementos.Last().Valor;
+            }
+        }
+
+        public Disco pop(){
+
+
             return null;
         }                
 
-        public bool isEmpty()
-        {
+        public bool isEmpty(){
+            
             return true;
         }
 
