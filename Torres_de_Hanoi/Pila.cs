@@ -37,26 +37,36 @@ namespace Torres_de_Hanoi
 
         public void push(Disco d){
             if(d.Valor > Elementos.Last().Valor){
-                Console.Write("No se puede hacer el push");
+                Console.Write("No se puede hacer el push ");
             }
 
             else{
-                Elementos.Add(d);
-                Size = Elementos.Count();
-                Top = Elementos.Last().Valor;
+                Elementos.Add(d);  //anyade el disco 
+                Size = Elementos.Count(); // Cuenta todos los eleementos 
+                Top = Elementos.Last().Valor; //selecciona el último elemento de la lista
             }
         }
 
         public Disco pop(){
+            if(Elementos.Count() == 0){
+                Console.Write("No se puede hacer el pop ");
+            }
 
-
-            return null;
+            else{
+                Elementos.Last().pop();
+                Size = Elementos.Count();
+                Top = Elementos.Last().Valor;
+            }
+           
         }                
 
         public bool isEmpty(){
-            
-            return true;
+            if(Elementos.Count() == 0){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
-
     }
 }
