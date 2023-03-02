@@ -29,7 +29,7 @@ namespace Torres_de_Hanoi
             for(int i=n; i > 0; i--){
 
                 Disco disco = new Disco(); //crear disco vacío
-                Disco.Valor(n-i);       // Dar valor al disco
+                disco.Valor = i;      // Dar valor al disco
                 Elementos.Add(disco);   //Anyadir disco a la pila
             }
             Top = Elementos.Last().Valor;
@@ -39,7 +39,6 @@ namespace Torres_de_Hanoi
             if(d.Valor > Elementos.Last().Valor){
                 Console.Write("No se puede hacer el push ");
             }
-
             else{
                 Elementos.Add(d);  //anyade el disco 
                 Size = Elementos.Count(); // Cuenta todos los eleementos 
@@ -48,16 +47,20 @@ namespace Torres_de_Hanoi
         }
 
         public Disco pop(){
-            if(Elementos.Count() == 0){
+            if(this.isEmpty() == true){
                 Console.Write("No se puede hacer el pop ");
             }
-
             else{
-                Elementos.Last().pop();
-                Size = Elementos.Count();
+
+                Disco aux = new Disco();
+                aux = Elementos.Last();
+
+                Elementos.RemoveAt(Elementos.Count()-1);  // Quita el último elemento de la lista
+                Size = Elementos.Count();   
                 Top = Elementos.Last().Valor;
+
+                return aux;
             }
-           
         }                
 
         public bool isEmpty(){
