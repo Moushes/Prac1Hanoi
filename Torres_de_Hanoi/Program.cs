@@ -15,13 +15,18 @@ namespace Torres_de_Hanoi
             int userInputNum = Int32.Parse(userInput);  //Transforma el string a int y lo guarda
 
             Pila pilaI = new Pila(userInputNum);
-            Pila pilaM = new Pila();
+            Pila pilaA = new Pila();
             Pila pilaF = new Pila();
 
             int movimientos;
-
+            
+            //foreach (Disco disco in pilaI.Elementos)
+            //{
+            //    Console.Write(disco.Valor);
+            //}
+            
             Hanoi hanoi = new Hanoi();
-            movimientos = hanoi.iterativo(userInputNum, pilaI, pilaM, pilaF);
+            movimientos = hanoi.iterativo(userInputNum, pilaI, pilaA, pilaF);
             Console.Write(movimientos);
 
             // Keep the console window open in debug mode.
