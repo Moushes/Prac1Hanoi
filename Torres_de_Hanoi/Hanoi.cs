@@ -18,10 +18,28 @@ namespace Torres_de_Hanoi
             }
         }
 
-        public int iterativo(int n, Pila ini, Pila fin, Pila aux)
-        {
-            return 0;
+        public int iterativo(int n, Pila ini, Pila fin, Pila aux){
+            int m = 0;
+            if(n %2 == 0){
+                while (fin.Valor != 3) { 
+                    mover_disco(ini, fin);
+                    m = m + 1;
+                    mover_disco(ini, aux);
+                    m = m + 1;
+                    mover_disco(aux, fin);
+                    m = m + 1;
+                }
+            }
+            else{
+                while (fin.Valor != 3){
+                    mover_disco(ini, aux);
+                    m = m + 1;
+                    mover_disco(ini, fin);
+                    m = m + 1;
+                    mover_disco(aux, fin);
+                    m = m + 1;
+                }
+            return m;
         }
-
     }
 }

@@ -1,0 +1,3 @@
+C:\Users\Adria\Source\Repos\Moushes\Prac1Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.AssemblyReference.cache
+C:\Users\Adria\Source\Repos\Moushes\Prac1Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.SuggestedBindingRedirects.cache
+C:\Users\Adria\Source\Repos\Moushes\Prac1Hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
