@@ -11,17 +11,17 @@ namespace Torres_de_Hanoi
         /*TODO: Implementar métodos*/
         public void mover_disco(Pila a, Pila b){
             if(a.Top < b.Top){
-                b.push(a.pop());
+                b.push(a.Pop());
             }
             else{
-                a.push(b.pop());
+                a.push(b.Pop());
             }
         }
 
-        public int iterativo(int n, Pila ini, Pila fin, Pila aux){
+        public int iterativo(int n, Pila ini, Pila fin, Pila aux) {
             int m = 0;
-            if(n %2 == 0){
-                while (fin.Valor != 3) { 
+            if (n % 2 == 0) {
+                while (fin.Size != 3) {
                     mover_disco(ini, fin);
                     m = m + 1;
                     mover_disco(ini, aux);
@@ -29,9 +29,10 @@ namespace Torres_de_Hanoi
                     mover_disco(aux, fin);
                     m = m + 1;
                 }
+                return m;
             }
-            else{
-                while (fin.Valor != 3){
+            else {
+                while (fin.Size != 3) {
                     mover_disco(ini, aux);
                     m = m + 1;
                     mover_disco(ini, fin);
@@ -39,7 +40,8 @@ namespace Torres_de_Hanoi
                     mover_disco(aux, fin);
                     m = m + 1;
                 }
-            return m;
+                return m;
+            }
         }
     }
 }

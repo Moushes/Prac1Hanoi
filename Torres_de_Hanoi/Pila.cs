@@ -46,9 +46,10 @@ namespace Torres_de_Hanoi
             }
         }
 
-        public Disco pop(){
+        public Disco Pop(){
             if(this.isEmpty() == true){
                 Console.Write("No se puede hacer el pop ");
+                return null;
             }
             else{
 
