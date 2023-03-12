@@ -21,7 +21,7 @@ namespace Torres_de_Hanoi
         public int iterativo(int n, Pila ini, Pila fin, Pila aux) {
             int m = 0;
             if (n % 2 == 0) {
-                while (fin.Size != 3) {
+                while(fin.Size != 3) {
                     mover_disco(ini, fin);
                     m = m + 1;
                     mover_disco(ini, aux);
