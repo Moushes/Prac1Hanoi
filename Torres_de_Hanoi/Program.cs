@@ -27,7 +27,8 @@ namespace Torres_de_Hanoi
             
             Hanoi hanoi = new Hanoi();
             movimientos = hanoi.iterativo(userInputNum, pilaI, pilaA, pilaF);
-            Console.Write(movimientos);
+            Console.Write("Movimientos totales: " + movimientos);
+            Console.Write("\n");
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");

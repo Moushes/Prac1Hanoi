@@ -37,7 +37,23 @@ namespace Torres_de_Hanoi
                 b.push(numMover);
             }
         }
-
+        public void imprimir(Pila ini, Pila aux, Pila fin,int m){
+            
+            Console.Write("Movimiento " + m + "\n");
+            Console.Write("Pila Inicial:  " + ini.Size + " Disco en la cima: " + ini.Top + " Estado: "); imprimirPila(ini);
+            Console.Write("\n");
+            Console.Write("Pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + " Estado: "); imprimirPila(aux);
+            Console.Write("\n");
+            Console.Write("Pila Final:    " + fin.Size + " Disco en la cima: " + fin.Top + " Estado: "); imprimirPila(fin);
+            Console.Write("\n");
+            Console.Write("\n");
+        }
+        public void imprimirPila(Pila p){
+            foreach (Disco disco in p.Elementos)
+            {
+                Console.Write(disco.Valor + " ");
+            } 
+        }
         public int iterativo(int n, Pila ini, Pila aux, Pila fin)
         {
             int m = 0;
@@ -47,27 +63,16 @@ namespace Torres_de_Hanoi
                 {
                     mover_disco(ini, aux);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
-                    Console.Write("\n");
+                    imprimir(ini, aux, fin, m);
 
                     mover_disco(ini, fin);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
-                    Console.Write("\n");
+                    imprimir(ini, aux, fin, m);
 
                     mover_disco(aux, fin);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
-                    Console.Write("\n");
+                    imprimir(ini, aux, fin, m);
+
                 }
                 return m;
             }
@@ -77,11 +82,7 @@ namespace Torres_de_Hanoi
                 {
                     mover_disco(ini, fin);
                     m++;
-                    Console.Write("Movimiento  " + m + "\n");
-                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
-                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
-                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
-                    Console.Write("\n");
+                    imprimir(ini, aux, fin, m);
 
                     if (fin.Size == n){
                         return m;
@@ -89,20 +90,11 @@ namespace Torres_de_Hanoi
 
                     mover_disco(ini, aux);
                     m++;
-                    Console.Write("Movimiento  " + m + "\n");
-                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
-                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
-                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
-                    Console.Write("\n");
+                    imprimir(ini, aux, fin, m);
 
                     mover_disco(aux, fin);
                     m++;
-                    Console.Write("Movimiento  " + m + "\n");
-                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
-                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
-                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
-                    Console.Write("\n");
-
+                    imprimir(ini, aux, fin, m);
                 }
                 return m;
             }
