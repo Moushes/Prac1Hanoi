@@ -12,7 +12,7 @@ namespace Torres_de_Hanoi
         public int Top { get; set; }
         public List<Disco> Elementos { get; set; }
 
-
+        
         /* TODO: Implementar métodos */
         public Pila()  // pila vacía
         {
@@ -49,14 +49,19 @@ namespace Torres_de_Hanoi
                 return null;
             }
             else{
-
                 Disco aux = new Disco();
                 aux = Elementos.Last();
 
                 Elementos.RemoveAt(Elementos.Count() - 1);  // Quita el último elemento de la lista
                 Size = Elementos.Count();
-                Top = Elementos.Last().Valor;
-
+                if(!isEmpty()){
+                    Top = Elementos.Last().Valor;
+                }
+                else{
+                    Disco nuevo = new Disco();
+                    nuevo.Valor = 0;
+                    Top = nuevo.Valor;
+                }
                 return aux;
             }
         }                

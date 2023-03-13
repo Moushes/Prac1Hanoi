@@ -10,38 +10,34 @@ namespace Torres_de_Hanoi
     {
         /*TODO: Implementar métodos*/
         public void mover_disco(Pila a, Pila b){
-            if (a.Top > b.Top)
-            {
+            if(a.Top > b.Top && b.Top == 0){
+
                 Disco numMover = new Disco();
                 numMover = a.Pop();
                 b.push(numMover);
-                //b.push(a.Pop());
+                Console.Write("C1"+ "\n");
             }
-            else
+            else if(a.Top > b.Top && b.Top != 0){
+
+                Disco numMover = new Disco();
+                numMover = b.Pop();
+                a.push(numMover);
+                Console.Write("C2" + "\n");
+            }
+            else if(a.Top < b.Top && a.Top == 0)
             {
                 Disco numMover = new Disco();
                 numMover = b.Pop();
                 a.push(numMover);
+                Console.Write("C3" + "\n");
 
-                //a.push(b.Pop());
             }
-        }
+            else{
 
-        public void mover_disco2(Pila a, Pila b){
-            if (a.Top > b.Top)
-            {
-                Disco numMover = new Disco();
-                numMover = b.Pop();
-                a.push(numMover);
-                //b.push(a.Pop());
-            }
-            else
-            {
                 Disco numMover = new Disco();
                 numMover = a.Pop();
                 b.push(numMover);
-
-                //a.push(b.Pop());
+                Console.Write("C3" + "\n");
             }
         }
 
@@ -68,7 +64,7 @@ namespace Torres_de_Hanoi
                     Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
                     Console.Write("\n");
 
-                    mover_disco2(aux, fin);
+                    mover_disco(aux, fin);
                     m++;
                     Console.Write("Movimiento " + m + "\n");
                     Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
@@ -98,7 +94,7 @@ namespace Torres_de_Hanoi
                     Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
                     Console.Write("\n");
 
-                    mover_disco2(aux, fin);
+                    mover_disco(aux, fin);
                     m++;
                     Console.Write("Movimiento " + m + "\n");
                     Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
