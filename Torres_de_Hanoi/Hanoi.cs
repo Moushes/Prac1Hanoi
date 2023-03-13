@@ -15,21 +15,19 @@ namespace Torres_de_Hanoi
                 Disco numMover = new Disco();
                 numMover = a.Pop();
                 b.push(numMover);
-                Console.Write("C1"+ "\n");
+;
             }
             else if(a.Top > b.Top && b.Top != 0){
 
                 Disco numMover = new Disco();
                 numMover = b.Pop();
                 a.push(numMover);
-                Console.Write("C2" + "\n");
+
             }
-            else if(a.Top < b.Top && a.Top == 0)
-            {
+            else if(a.Top < b.Top && a.Top == 0){
                 Disco numMover = new Disco();
                 numMover = b.Pop();
                 a.push(numMover);
-                Console.Write("C3" + "\n");
 
             }
             else{
@@ -37,7 +35,6 @@ namespace Torres_de_Hanoi
                 Disco numMover = new Disco();
                 numMover = a.Pop();
                 b.push(numMover);
-                Console.Write("C3" + "\n");
             }
         }
 
@@ -80,26 +77,30 @@ namespace Torres_de_Hanoi
                 {
                     mover_disco(ini, fin);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
+                    Console.Write("Movimiento  " + m + "\n");
+                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
+                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
+                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
                     Console.Write("\n");
+
+                    if (fin.Size == n){
+                        return m;
+                    }
 
                     mover_disco(ini, aux);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
+                    Console.Write("Movimiento  " + m + "\n");
+                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
+                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
+                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
                     Console.Write("\n");
 
                     mover_disco(aux, fin);
                     m++;
-                    Console.Write("Movimiento " + m + "\n");
-                    Console.Write("Estado de pila Inicial: " + ini.Size + " Disco en la cima: " + ini.Top + "\n");
-                    Console.Write("Estado de pila auxiliar: " + aux.Size + " Disco en la cima: " + aux.Top + "\n");
-                    Console.Write("Estado de pila Final: " + fin.Size + " Disco en la cima: " + fin.Top + "\n");
+                    Console.Write("Movimiento  " + m + "\n");
+                    Console.Write("Pila Inicial:  " + ini.Size + " Top: " + ini.Top + "\n");
+                    Console.Write("Pila auxiliar: " + aux.Size + " Top: " + aux.Top + "\n");
+                    Console.Write("Pila Final:    " + fin.Size + " Top: " + fin.Top + "\n");
                     Console.Write("\n");
 
                 }
